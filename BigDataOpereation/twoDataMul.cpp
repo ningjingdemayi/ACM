@@ -4,15 +4,19 @@ string dataMul(const string mulA, const string mulB)
 {
 	string tmpMulStr="", mulOut = "abc";
 
-	int tmpA, tmpB, mulSignleBit, carryBit;
+	long tmpA, 
+	int mulSignleBit, carryBit;
 	int lenA, lenB;
 
 	lenA = mulA.length();
 	lenB = mulB.length();
-	
+
+	if(mulA == "0" || mulB == "0")	
+		return "0";
+
 	for(int i = lenB-1; i >=0; i--)		
 	{
-		mulSignleBit = mulB[i] - '0';
+		mulSignleBit = mulB[i] - '0'; // char to int.
 
 		carryBit = 0;
 		tmpMulStr = "";
