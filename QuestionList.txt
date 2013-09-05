@@ -15,7 +15,13 @@ int main()
     return 0; //reminder: must return int.
 }
 
+Question list: http://poj.org/problemlist
+
 Start on 2013-08-22
 
-Week one: A+B Problem
-Week one: Exponentiation
+Week one: A+B Problem (steve finish)
+Week one: Exponentiation(steve finish / liu hui part finish)
+
+Start on 2013-09-02
+
+Week two: 487-3279
