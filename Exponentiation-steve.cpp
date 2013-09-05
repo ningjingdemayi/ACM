@@ -5,14 +5,57 @@
 
 using namespace std;
 
+struct number
+{
+	string strValue;
+	long numValue;
+	int length;
+
+	number(string v1)
+	{
+		strValue = v1;
+		numValue = atol(strValue.c_str());
+		length = v1.size();
+	}
+};
+
 int toInt(char val)
 {
 	return val - 48;
 }
 
+string add(string v1, string v2)
+{
+	string t;
+	if(v1.size() < v2.size())
+	{
+		t = v1;
+		v1 = v2;
+		v2 = t;
+	}
+
+	int up = 0;
+	int i = 0;
+	for(i ; i< v1.size(), i<=v2.size(); i++)
+	{
+		int t1 = toInt(v1[i]);
+		int t2 = toInt(v2[i]);
+		int t = t1 + t2 + up;
+		up = t > 10 ? 1 : 0;
+		v1[i] = t % 10;
+	}
+
+	if(up) v1[i] = toInt(v1[i])+1;
+
+	return v1;
+}
+
 void comput(string *num)
 {
-	vector<long> calc;
+	vector<number> calc;
+	vector<string> result;
+	string bits = "";
+
 	vector<int> nums;
 	long tmp;
 
@@ -23,18 +66,31 @@ void comput(string *num)
 
 	while((*num).size() >5)
 	{
-		calc.push_back(atol((*num).substr(0, 5).c_str()));
+		calc.push_back(number((*num).substr(0, 5)));
 		*num = (*num).substr(5,(*num).size());
 	}
-	calc.push_back(atol((*num).substr(0, (*num).size()).c_str()));
+	calc.push_back(number((*num).substr(0, (*num).size())));
 
 	for(auto p = nums.end(); p != nums.begin(); p-- )
 	{
 		for(int i = 0; i< calc.size(); i++)
 		{
-			tmp = (*p) * calc[i];
-			// calc continue.
+			char buffer[10];
+			tmp = (*p) * calc[i].numValue;
+			_ltoa_s(tmp, buffer, 10, 10);
+			result.push_back(string(buffer) + bits);
+			bits += string(calc[i].length, '0');
 		}
+
+		bits = "";
+	}
+
+	//Add results one by one.
+
+	string finalRes = result[0];
+	for(int i = 1; i < calc.size(); i++)
+	{
+		finalRes = add(finalRes, result[i]);
 	}
 }
 
