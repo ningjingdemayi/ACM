@@ -19,17 +19,27 @@ int main()
 
 Question list: http://poj.org/problemlist
 
-Start on 2013-08-22
+Week One:	Start on 2013-08-22
+	1. A+B Problem 			(steve finish)
+	2. Exponentiation		(steve finish / liu hui part finish)
 
-Week one: A+B Problem (steve finish)
-Week one: Exponentiation(steve finish / liu hui part finish)
+Week two:	Start on 2013-09-02
+	1. 487-3279			(steve finish)
 
-Start on 2013-09-02
+Week three: 	Start on 2013-09-09
+	1. Hangover			(steve / lh finish)
 
-Week two: 487-3279
+Week four:	Start on 2013-09-16
+	1. Financial Management		
+	2. I Think I Need a Houseboat
 
-Start on 2013-09-09
+Week five:	Start on 2013-09-23
+	1. Q1 below
+	2. Q2 below
 
-Week two: Hangover
 
-Week three: Financial Management / I Think I Need a Houseboat
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q1: 求一个正整数N的开方，要求不使用库函数sqrt，结果的精度在0.001即可。
+
+Q2：给定一个数组int matrixA[n][m]，每行和每列都是增序的，实现一个算法去寻找矩阵中的某个元素element。
+
