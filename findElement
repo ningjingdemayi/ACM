@@ -30,6 +30,7 @@ void findElement(long row ,long column , T * matrixA , T element )
 			printf("( %d , %d ) = %d \n" , i , j , element);
 			isExists = true;
 			-- j;
+			++ i;
 		}
 	}
 
